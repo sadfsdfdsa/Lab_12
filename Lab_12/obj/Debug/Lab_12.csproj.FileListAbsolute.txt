@@ -1,0 +1,6 @@
+D:\work\csharp_projects\Lab_12\Lab_12\bin\Debug\Lab_12.exe
+D:\work\csharp_projects\Lab_12\Lab_12\bin\Debug\Lab_12.pdb
+D:\work\csharp_projects\Lab_12\Lab_12\obj\Debug\Lab_12.csprojAssemblyReference.cache
+D:\work\csharp_projects\Lab_12\Lab_12\obj\Debug\Lab_12.csproj.CoreCompileInputs.cache
+D:\work\csharp_projects\Lab_12\Lab_12\obj\Debug\Lab_12.exe
+D:\work\csharp_projects\Lab_12\Lab_12\obj\Debug\Lab_12.pdb
