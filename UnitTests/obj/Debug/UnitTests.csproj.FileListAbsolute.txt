@@ -1,0 +1,11 @@
+D:\work\csharp_projects\Lab_12\UnitTests\bin\Debug\UnitTests.dll
+D:\work\csharp_projects\Lab_12\UnitTests\bin\Debug\UnitTests.pdb
+D:\work\csharp_projects\Lab_12\UnitTests\bin\Debug\nunit.framework.dll
+D:\work\csharp_projects\Lab_12\UnitTests\bin\Debug\nunit.framework.xml
+D:\work\csharp_projects\Lab_12\UnitTests\obj\Debug\UnitTests.csprojAssemblyReference.cache
+D:\work\csharp_projects\Lab_12\UnitTests\obj\Debug\UnitTests.csproj.CoreCompileInputs.cache
+D:\work\csharp_projects\Lab_12\UnitTests\obj\Debug\UnitTests.csproj.CopyComplete
+D:\work\csharp_projects\Lab_12\UnitTests\obj\Debug\UnitTests.dll
+D:\work\csharp_projects\Lab_12\UnitTests\obj\Debug\UnitTests.pdb
+D:\work\csharp_projects\Lab_12\UnitTests\bin\Debug\Lab_12.exe
+D:\work\csharp_projects\Lab_12\UnitTests\bin\Debug\Lab_12.pdb

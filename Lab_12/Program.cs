@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab_12
 {
-    internal class Program
+    public static class Program
     {
         public static List<Production> items = new List<Production>();
 
@@ -28,28 +28,40 @@ namespace Lab_12
                 {
                     case "1":
                         Task1A();
+                        Console.ReadLine();
                         break;
                     case "2":
                         Task1B();
+                        Console.ReadLine();
                         break;
                     case "3":
                         Task1C();
+                        Console.ReadLine();
                         break;
                     case "4":
                         Task2();
+                        Console.ReadLine();
                         break;
                 }
             } while (userChoice != "0");
         }
 
-        public static void Task1A()
+        public static void Task1A(int workers = 0)
         {
             Console.WriteLine("Task 1");
             Point listTask = CreateLinkedList(5);
             ShowList(listTask);
 
             Console.Write("Введите кол-во работников, после элемента с которыми вставится новый: ");
-            int workers = int.Parse(Console.ReadLine());
+            if (workers == 0)
+            {
+                workers = int.Parse(Console.ReadLine());
+            }
+            else
+            {
+                workers = listTask.data.WorkersNumber;
+            }
+
             Point point = listTask;
             Random rnd = new Random();
             while (point != null)
@@ -67,7 +79,6 @@ namespace Lab_12
             ShowList(listTask);
 
             listTask = null;
-            Console.ReadLine();
         }
 
         public static void Task1B()
@@ -97,9 +108,7 @@ namespace Lab_12
             }
 
             ShowList(doubleListTask);
-
             doubleListTask = null;
-            Console.ReadLine();
         }
 
         public static void Task1C()
@@ -118,7 +127,6 @@ namespace Lab_12
             ShowTree(tree, 0);
 
             tree = null;
-            Console.ReadLine();
         }
 
         public static void Task2()
@@ -152,9 +160,6 @@ namespace Lab_12
 
 
             stack = null;
-
-
-            Console.ReadLine();
         }
 
         public static Point CreateLinkedList(int length)
@@ -306,7 +311,7 @@ namespace Lab_12
         }
     }
 
-    class Point
+    public class Point
     {
         public Production data; //информационное поле
         public Point next, prev;
@@ -331,7 +336,7 @@ namespace Lab_12
         }
     }
 
-    class PointTree
+    public class PointTree
     {
         public Production data;
 
@@ -358,7 +363,7 @@ namespace Lab_12
     }
 
 
-    class CustomStack : IEnumerable, IEnumerator
+    public class CustomStack : IEnumerable, IEnumerator
     {
         public int Length;
         public Point Point;
@@ -494,7 +499,7 @@ namespace Lab_12
         }
     }
 
-    class CustomStackEnumerator : IEnumerator<Production>
+    public class CustomStackEnumerator : IEnumerator<Production>
     {
         public int Length;
         public Point Point;
