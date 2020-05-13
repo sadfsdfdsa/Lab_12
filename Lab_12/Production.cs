@@ -4,12 +4,7 @@ using System.Collections.Generic;
 
 namespace Lab_12
 {
-    public interface IPrint
-    {
-        void Print();
-    }
-
-    public class Production : IComparable, IPrint, ICloneable
+    public class Production : ICloneable
     {
         private int _workersNumber;
 
@@ -24,146 +19,11 @@ namespace Lab_12
             Console.WriteLine($"Workers: {WorkersNumber}");
         }
 
-        // todo work only with new key
-        public void ShowInfoFake()
-        {
-            Console.WriteLine($"Workers: {WorkersNumber}");
-        }
-
-        public int CompareTo(object obj)
-        {
-            Production temp = (Production) obj;
-            if (WorkersNumber > temp.WorkersNumber) return 1;
-            if (WorkersNumber < temp.WorkersNumber) return -1;
-            return 0;
-        }
-
-        public void Print()
-        {
-            ShowInfo();
-        }
-
         public object Clone()
         {
             return new Production {WorkersNumber = WorkersNumber};
         }
     }
-
-    public class Factory : Production, IPrint, ICloneable
-    {
-        public Production BaseProduction
-
-        {
-            get
-            {
-                return new Production() {WorkersNumber = WorkersNumber}; //возвращает объект базового класса
-            }
-        }
-
-        private string _factoryName;
-
-        public string FactoryName
-        {
-            get => _factoryName;
-            set => _factoryName = value;
-        }
-
-        public override void ShowInfo()
-        {
-            Console.WriteLine($"Factory name: {FactoryName}, Workers: {WorkersNumber}");
-        }
-
-        // todo work only with new key
-        public new void ShowInfoFake()
-        {
-            Console.WriteLine($"Factory name: {FactoryName}, Workers: {WorkersNumber}");
-        }
-
-        public new void Print()
-        {
-            Console.Write("IPrint, factory:");
-            ShowInfo();
-        }
-
-        public new object Clone()
-        {
-            return new Factory {FactoryName = FactoryName, WorkersNumber = WorkersNumber};
-        }
-    }
-
-    public class Shop : Production, ICloneable
-    {
-        public Production BaseProduction
-
-        {
-            get
-            {
-                return new Production() {WorkersNumber = WorkersNumber}; //возвращает объект базового класса
-            }
-        }
-
-        private string _shopName;
-
-        public string ShopName
-        {
-            get => _shopName;
-            set => _shopName = value;
-        }
-
-        public int MainWorkerNumber { get; set; }
-
-        public override void ShowInfo()
-        {
-            Console.WriteLine($"Engineer number: {MainWorkerNumber}, Workers: {WorkersNumber}, ShopName: {ShopName}");
-        }
-
-        public new object Clone()
-        {
-            return new Shop {ShopName = ShopName, WorkersNumber = WorkersNumber, MainWorkerNumber = MainWorkerNumber};
-        }
-
-        public override string ToString()
-        {
-            return _shopName;
-        }
-    }
-
-    public class Workshop : Production, ICloneable, IPrint
-    {
-        public Production BaseProduction
-
-        {
-            get
-            {
-                return new Production() {WorkersNumber = WorkersNumber}; //возвращает объект базового класса
-            }
-        }
-
-        private int _managersNumber;
-
-        public int ManagersNumber
-        {
-            get => _managersNumber;
-            set => _managersNumber = value;
-        }
-
-        public override void ShowInfo()
-        {
-            Console.WriteLine($"Managers: {ManagersNumber}, Workers: {WorkersNumber}");
-        }
-
-        public new object Clone()
-        {
-            return new Workshop {ManagersNumber = ManagersNumber, WorkersNumber = WorkersNumber};
-        }
-
-        public new void Print()
-        {
-            Console.Write("IPrint, workshop: ");
-            ShowInfo();
-        }
-    }
-
 
     // sorting
     public class SortByWorkersNumber : IComparer
